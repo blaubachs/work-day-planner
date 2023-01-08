@@ -13,6 +13,7 @@ $(function () {
   let containerDiv = $("#block-div");
   let headerText = $("#currentDay");
   let init = false;
+  let currentHour = dayjs().format("HH");
   grabDate();
 
   writeToPage();
@@ -38,7 +39,6 @@ $(function () {
   // current hour in 24-hour time?
 
   function updateSeconds() {
-    let currentHour = dayjs().format("HH");
     updateBackgrounds();
     return currentHour;
   }
@@ -46,6 +46,15 @@ $(function () {
   function updateBackgrounds() {
     for (i = 0; i < 9; i++) {
       let blocks = containerDiv.children().eq(i);
+      blocks.removeClass("present past future");
+
+      if (currentHour == blocks.attr("id")) {
+        blocks.addClass("present");
+      } else if (currentHour < blocks.attr("id")) {
+        blocks.addClass("future");
+      } else if (currentHour > blocks.attr("id")) {
+        blocks.addClass("past");
+      }
     }
   }
   setInterval(updateSeconds, 1000);
