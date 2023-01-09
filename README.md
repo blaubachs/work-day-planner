@@ -6,13 +6,13 @@ The purpose of this project was to create a small calendar app to track events d
 
 ## Installation
 
-There is no installation required for this. Simply visit the link of the deployed page 
+There is no installation required for this. Simply visit the link of the deployed page [here](https://blaubachs.github.io/work-day-planner/).
 
 ## Usage
 
 To use this app, simply enter in your event in the field of the corrosponding time that you would like to save. Then, press the blue save button to the right, and it will be saved to local storage. The save button will save all of your events, no matter which one you click on.
 
-![app-screenshot]()
+![app-screenshot](./assets/work-day-planner.PNG)
 
 
 ## License
